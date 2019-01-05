@@ -9,12 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var startButt: UIButton!
+    
+    @IBOutlet var startView: UIView!
+    
+    @IBOutlet var mainView: UIView!
+    
+    @IBOutlet var image1: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        mainView.isHidden = true
     }
-
+    
+    @IBAction func starting(_ sender: Any) {
+        startButt.isHidden = true
+        mainView.isHidden = false
+        //startView.isHidden = true
+        image1.transform = image1.transform.rotated(by: CGFloat.pi * 0.5)
+    }
+    
 
 }
 
